@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+:root {
+/* Colors */
+/* Primary */
+--Soft-red: hsl(10, 79%, 65%);
+--Cyan: hsl(186, 34%, 60%);
+/* Neutral */
+--Dark-brown: hsl(25, 47%, 15%);
+--Medium-brown: hsl(28, 10%, 53%);
+--Cream: hsl(27, 66%, 92%);
+--Very-pale-orange: hsl(33, 100%, 98%);
+--text: "hello";
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+:root {
+/* Colors */
+/* Primary */
+--Soft-red: hsl(10, 79%, 65%);
+--Cyan: hsl(186, 34%, 60%);
+/* Neutral */
+--Dark-brown: hsl(25, 47%, 15%);
+--Medium-brown: hsl(28, 10%, 53%);
+--Cream: hsl(27, 66%, 92%);
+--Very-pale-orange: hsl(33, 100%, 98%);
+--text: "hello";
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+body {
+    font-size: 18px;
+    background-color: var(--Cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 540px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container header {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: var(--Soft-red);
+    border-radius: 18px;
+}
+
+.container header p,
+.container header span {
+    color: #fff;
+}
+
+.container header span {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.container .content {
+    background-color: var(--Very-pale-orange);
+    border-radius: 18px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.container .content h1 {
+    color: var(--Dark-brown);
+    font-size: 33px;
+}
+
+.container .content .daily-spending {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    height: 100px;
+    gap: 20px;
+    margin-block: 80px 20px;
+}
+
+.container .content .daily-spending .column {
+    position: relative;
+    background-color: var(--Soft-red);
+    width: calc(540px / 7);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    height: 0;
+    transition: .4s;
+}
+
+.container .content .daily-spending .column.highest {
+    background-color: hsl(186, 34%, 60%) ;
+}
+.container .content .daily-spending .column.highest:hover {
+    background-color: hsla(186, 34%, 60%, .6) ;
+}
+
+.container .content .daily-spending .column:hover {
+    background-color: hsla(10, 79%, 65%, .6);
+}
+
+.container .content .daily-spending .column .day {
+    position: absolute;
+    bottom: -25px;
+    color: var(--Medium-brown);
+    letter-spacing: -.5px;
+    font-size: 15px;
+    pointer-events: none;
+}
+
+.container .content .daily-spending .column .amount {
+    background-color: var(--Dark-brown);
+    position: absolute;
+    top: -42px;
+    opacity: 0;
+    color: var(--Very-pale-orange);
+    padding: 4px 6px;
+    border-radius: 6px;
+    font-size: 14px;
+    pointer-events: none;
+    transition: .2s;
+}
+
+.container .content .daily-spending .column .amount.show {
+    top: -32px;
+    opacity: 1;
+}
+
+.container .content hr {
+    border: none;
+    height: 1px;
+    background-color: var(--Cream);
+}
+
+.container .content .monthly-spending {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .content .monthly-spending .this-month p {
+    color: var(--Medium-brown);
+    font-size: 16px;
+}
+
+.container .content .monthly-spending .this-month span {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--Dark-brown);
+}
+
+.container .content .monthly-spending .last-month {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.container .content .monthly-spending .last-month span {
+    color: var(--Dark-brown);
+    font-weight: 700;
+}
+.container .content .monthly-spending .last-month p {
+    color: var(--Medium-brown);
+}
+
+@media (max-width: 580px) {
+    .container {
+        width: 350px;
+    }
+    .container header {
+        padding: 20px;
+    }
+    .container header span {
+        font-size: 28px;
+    }
+    .container .content {
+        padding: 20px;
+    }
+    .container .content h1 {
+        font-size: 24px;
+    }
+    .container .content .daily-spending {
+        gap: 10px;
+    }
+    .container .content .daily-spending .column .amount {
+        font-size: 12px;
+    }
+    .container .content .daily-spending .column .amount.show {
+        top: -28px;
+    }
+    .container .content .monthly-spending .this-month span {
+        font-size: 31px;
+    }
+    .container .content .monthly-spending .last-month p {
+        /* letter-spacing: -.5px; */
+        font-size: 17px;
+    }
+}
